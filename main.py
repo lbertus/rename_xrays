@@ -173,7 +173,7 @@ class APP(tk.Tk):
                 job_elements = soup.find_all(class_="header_data")  # creates: class 'bs4.element.ResultSet'
                 for job_element in job_elements:  # iterate over bs4.element.ResultSet
                     print(job_element)
-                product_name = job_elements[1].string
+                product_name = job_elements[1].string   # Divigraph_VP_CX03_v5.5.9.1_1st_side
                 print('\nProduct Name:', product_name)  # will be routine name
                 print('Routine serial number:', job_elements[2].string)  # will be None if no routine serial number used
                 print('User:', job_elements[3].string)  # user not used on X-ray machine
@@ -248,9 +248,9 @@ class APP(tk.Tk):
                                     print('product_name_split: ', product_name_split)
                                     customer = product_name_split[0]
                                     print('customer: ', customer)
-                                    product = product_name_split[1]
+                                    product = product_name_split[1] + "_" + product_name_split[2]
                                     print('product: ', product)
-                                    version = product_name_split[2]
+                                    version = product_name_split[3]
                                     print('version: ', version)
 
                                     # new_image_filename = customer + '_' + product_name + '_' + date_code + '-' + \
